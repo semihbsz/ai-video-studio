@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="tr">
   <head>
@@ -6,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI Shorts Studio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Montserrat:wght@700;900&family=Oswald:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- COI Service Worker: GitHub Pages'te WASM (FFmpeg/Whisper) performansı için gerekli -->
+    <script src="coi-serviceworker.js"></script>
+    
     <style>
       html, body {
         height: 100%;
         width: 100%;
-        overflow: hidden; /* Disable global scroll */
+        overflow: hidden;
       }
       #root {
         height: 100%;
@@ -28,14 +30,18 @@
   <script type="importmap">
 {
   "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0"
+    "vite": "https://aistudiocdn.com/vite@^7.2.4",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
   }
 }
 </script>
 </head>
   <body>
     <div id="root"></div>
+    <!-- React Giriş Noktası -->
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>
