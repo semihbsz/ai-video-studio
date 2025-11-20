@@ -4,9 +4,9 @@ import react from '@vitejs/plugin-react';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: './', // GitHub Pages için göreceli yol kullanımı zorunludur
+  base: './', // GitHub Pages için bu ayar zorunludur (boş sayfa hatasını çözer)
   build: {
-    target: 'esnext', // Modern tarayıcı özellikleri ve WASM için
+    target: 'esnext',
     outDir: 'dist',
   },
   server: {

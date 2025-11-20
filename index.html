@@ -4,29 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI Shorts Studio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Montserrat:wght@700;900&family=Oswald:wght@700&display=swap" rel="stylesheet">
     
-    <!-- COI Service Worker: GitHub Pages'te WASM (FFmpeg/Whisper) performansı için gerekli -->
+    <!-- Tailwind CSS (CDN ile anında düzeltme) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Oswald', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+
+    <!-- COI Service Worker: WASM Performansı için -->
     <script src="coi-serviceworker.js"></script>
-    
-    <style>
-      html, body {
-        height: 100%;
-        width: 100%;
-        overflow: hidden;
-      }
-      #root {
-        height: 100%;
-        width: 100%;
-      }
-      .custom-scroll::-webkit-scrollbar { width: 6px; height: 6px; }
-      .custom-scroll::-webkit-scrollbar-track { background: #0f172a; }
-      .custom-scroll::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
-      .custom-scroll::-webkit-scrollbar-thumb:hover { background: #475569; }
-      body { background-color: #020617; color: white; font-family: 'Inter', sans-serif; margin: 0; }
-    </style>
   <script type="importmap">
 {
   "imports": {
@@ -39,9 +38,8 @@
 }
 </script>
 </head>
-  <body>
+  <body class="bg-[#020617] text-white">
     <div id="root"></div>
-    <!-- React Giriş Noktası -->
     <script type="module" src="./index.tsx"></script>
   </body>
 </html>
