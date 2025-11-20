@@ -4,10 +4,10 @@ import react from '@vitejs/plugin-react';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: './', // GitHub Pages için bu ayar zorunludur (boş sayfa hatasını çözer)
+  base: './', // GitHub Pages için zorunlu: Kaynakları göreceli yollardan yükler
   build: {
-    target: 'esnext',
     outDir: 'dist',
+    assetsDir: 'assets',
   },
   server: {
     headers: {
